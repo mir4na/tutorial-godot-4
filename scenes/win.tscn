@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bgg34m33drh4n"]
+
+[ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/Familiar Looking Rocket.png" id="1_r4oei"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxjwb"]
+size = Vector2(65, 230)
+
+[node name="Win" type="Area2D" unique_id=1450951715]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=604088432]
+position = Vector2(1052, 217)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_r4oei")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1747745098]
+position = Vector2(1051, 219)
+shape = SubResource("RectangleShape2D_jxjwb")

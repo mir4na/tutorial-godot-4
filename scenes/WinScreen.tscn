@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene format=3 uid="uid://dulj1v1ou7mib" load_steps=3]
 
-[ext_resource type="Texture2D" path="res://Assets/Keanu.png" id="1"]
+[ext_resource type="Texture2D" path="res://assets/Keanu.png" id="1"]
+[ext_resource type="Script" path="res://scripts/win_screen.gd" id="2_script"]
 
 [node name="WinScreen" type="TextureRect"]
 anchors_preset = 15
@@ -10,3 +11,4 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1")
 expand_mode = 1
+script = ExtResource("2_script")

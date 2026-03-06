@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://1s3pp04456s1"]
+
+[ext_resource type="Script" uid="uid://dqb3gl5x4sjvp" path="res://scripts/main_menu.gd" id="1_mainmenu"]
+[ext_resource type="Texture2D" uid="uid://ch5ret1dd7qk3" path="res://assets/kenney_platformerpack/PNG/Backgrounds/blue_grass.png" id="2_bg"]
+
+[node name="MainMenu" type="Control" unique_id=1521972722]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mainmenu")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1850832356]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=562319964]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1396340876]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=866559235]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Quit"
+
+[node name="Label" type="Label" parent="." unique_id=1102877904]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 140.0
+offset_right = 756.0
+offset_bottom = 228.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "TUTORIAL 4"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

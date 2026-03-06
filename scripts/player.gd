@@ -17,10 +17,10 @@ func _physics_process(delta: float) -> void:
 		var target_angle = floor_normal.angle() + PI / 2
 		$Sprite2D.rotation = lerp_angle($Sprite2D.rotation, target_angle, delta * 15)
 
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction := Input.get_axis("left", "right")
 	if direction != 0:
 		velocity.x = direction * SPEED
 		if direction < 0:

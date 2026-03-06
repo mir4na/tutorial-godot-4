@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/fish_enemy.gd" id="1_fish"]
+[ext_resource type="Texture2D" uid="uid://c6s7571njofus" path="res://assets/kenney_platformerpack/PNG/Enemies/fishBlue.png" id="2_bg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fish"]
+size = Vector2(50, 60)
+
+[node name="FishEnemy" type="Area2D"]
+script = ExtResource("1_fish")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_bg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fish")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

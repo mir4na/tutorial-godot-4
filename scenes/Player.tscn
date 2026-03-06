@@ -72,7 +72,7 @@ position = Vector2(0, -25)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2")
 hframes = 4
-frame = 2
+frame = 3
 
 [node name="Animator" type="AnimationPlayer" parent="." unique_id=1848871375]
 libraries/ = SubResource("AnimationLibrary_sbh6e")

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://0i050w2oyc12"]
+
+[ext_resource type="Texture2D" uid="uid://bivk5n8i3vnqc" path="res://assets/kenney_platformerpack/PNG/Enemies/fishBlue.png" id="1_w12th"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqwck"]
+atlas = ExtResource("1_w12th")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fv0c4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqwck")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gc7ss"]
+radius = 35.0
+height = 84.0
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=528878103]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2094375422]
+sprite_frames = SubResource("SpriteFrames_fv0c4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=151439909]
+shape = SubResource("CapsuleShape2D_gc7ss")
