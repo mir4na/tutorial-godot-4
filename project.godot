@@ -8,10 +8,6 @@
 
 config_version=5
 
-[autoload]
-
-Global="*res://scripts/global.gd"
-
 [animation]
 
 compatibility/default_parent_skeleton_in_mesh_instance_3d=true
@@ -22,6 +18,10 @@ config/name="Tutorial 4 Template"
 run/main_scene="res://scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.6")
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://scripts/global.gd"
 
 [input]
 

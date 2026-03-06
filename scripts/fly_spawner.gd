@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var fish_scene: PackedScene
+@export var fly_scene: PackedScene
 @export var spawn_interval: float = 1.0
 
 func _ready():
@@ -11,7 +11,7 @@ func _ready():
 	add_child(timer)
 
 func _on_timer_timeout():
-	if fish_scene:
-		var fish = fish_scene.instantiate()
-		fish.position = Vector2(randf_range(-200, 1000), 1200)
-		add_child(fish)
+	if fly_scene:
+		var fly = fly_scene.instantiate()
+		fly.position = Vector2(1900, randf_range(-400, 400))
+		add_child(fly)

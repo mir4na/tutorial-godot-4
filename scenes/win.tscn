@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/Familiar Looking Rocket.png" id="1_r4oei"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jxjwb"]
-size = Vector2(65, 230)
+size = Vector2(65, 149)
 
 [node name="Win" type="Area2D" unique_id=1450951715]
 
@@ -13,5 +13,5 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_r4oei")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1747745098]
-position = Vector2(1051, 219)
+position = Vector2(1051, 259.5)
 shape = SubResource("RectangleShape2D_jxjwb")
