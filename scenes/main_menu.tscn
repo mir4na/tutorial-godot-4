@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://dvm6w1dnrftse"]
+
+[ext_resource type="FontFile" uid="uid://c8eepg1ubf60l" path="res://fonts/Font-Pack-ec116ca3030490b085a85cd07969ed5a7fb2f3f2/addons/Font Pack/MachineBT.ttf" id="1_bqqt6"]
+[ext_resource type="Script" uid="uid://c2q4eaardhlr4" path="res://scripts/new_game.gd" id="2_8ln24"]
+[ext_resource type="FontFile" uid="uid://boda3j0ml1vlm" path="res://fonts/Font-Pack-ec116ca3030490b085a85cd07969ed5a7fb2f3f2/addons/Font Pack/RodchenkoBTT.ttf" id="2_wu84c"]
+[ext_resource type="Texture2D" uid="uid://dhsqj8dybb7fq" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_alien.png" id="3_8ln24"]
+[ext_resource type="PackedScene" uid="uid://yqmk0vpvnyxr" path="res://scenes/Level1.tscn" id="3_rtw2f"]
+[ext_resource type="Script" uid="uid://4jnutai24a3u" path="res://scripts/stage_select.gd" id="5_rtw2f"]
+[ext_resource type="PackedScene" uid="uid://bm653ty7q1qw7" path="res://scenes/select_stage.tscn" id="6_oa1go"]
+
+[node name="MainMenu" type="Control" unique_id=1572611885]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2002606194]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=991507164]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=498730034]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=642064024]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=2067352061]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.70870304, 0.70870304, 1)
+theme_override_font_sizes/font_size = 64
+text = "Tutorial 6"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=360671349]
+layout_mode = 2
+
+[node name="NewGame" type="LinkButton" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=336121114]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87038684, 5.655363e-06, 7.70092e-07, 1)
+theme_override_fonts/font = ExtResource("1_bqqt6")
+theme_override_font_sizes/font_size = 60
+text = "NEW GAME"
+underline = 2
+script = ExtResource("2_8ln24")
+scene_to_load = ExtResource("3_rtw2f")
+
+[node name="StageSelect" type="LinkButton" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1192514439]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.807754, 0.4363835, 1.1551381e-06, 1)
+theme_override_fonts/font = ExtResource("2_wu84c")
+theme_override_font_sizes/font_size = 48
+text = "STAGE SELECT"
+underline = 2
+script = ExtResource("5_rtw2f")
+scene_to_load = ExtResource("6_oa1go")
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer" unique_id=413304482]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/CenterContainer" unique_id=396158013]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+texture = ExtResource("3_8ln24")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/NewGame" to="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/NewGame" method="_on_New_Game_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/StageSelect" to="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/StageSelect" method="_on_stage_select_pressed"]

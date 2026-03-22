@@ -1,13 +1,61 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene format=3 uid="uid://drvx7pnat80sn"]
 
-[ext_resource type="Texture2D" path="res://assets/dead.jpg" id="1"]
-[ext_resource type="Script" path="res://scripts/lose_screen.gd" id="2_script"]
+[ext_resource type="Texture2D" uid="uid://5qulglhtgv2g" path="res://assets/Sprite-0001.png" id="2_aeugc"]
+[ext_resource type="Script" uid="uid://d26i7gqlrmogg" path="res://scripts/lose_screen.gd" id="2_script"]
+[ext_resource type="FontFile" uid="uid://boda3j0ml1vlm" path="res://fonts/Font-Pack-ec116ca3030490b085a85cd07969ed5a7fb2f3f2/addons/Font Pack/RodchenkoBTT.ttf" id="3_x2vho"]
+[ext_resource type="FontFile" uid="uid://c8eepg1ubf60l" path="res://fonts/Font-Pack-ec116ca3030490b085a85cd07969ed5a7fb2f3f2/addons/Font Pack/MachineBT.ttf" id="4_x2vho"]
 
-[node name="LoseScreen" type="Node2D"]
+[node name="LoseScreen" type="Node2D" unique_id=501816676]
 script = ExtResource("2_script")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="ColorRect" parent="." unique_id=1555077080]
 offset_right = 1152.0
 offset_bottom = 648.0
-texture = ExtResource("1")
-expand_mode = 1
+
+[node name="Sprite0001" type="Sprite2D" parent="." unique_id=220707691]
+position = Vector2(573.5, 324.99997)
+scale = Vector2(9.0546875, 5.0937495)
+texture = ExtResource("2_aeugc")
+
+[node name="Label" type="Label" parent="." unique_id=1089260825]
+offset_left = 313.0
+offset_top = 229.0
+offset_right = 808.0
+offset_bottom = 379.0
+theme_override_colors/font_color = Color(0.84705883, 0, 0, 1)
+theme_override_constants/line_spacing = 3
+theme_override_constants/shadow_offset_x = 64
+theme_override_constants/shadow_offset_y = 64
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 64
+theme_override_fonts/font = ExtResource("3_x2vho")
+theme_override_font_sizes/font_size = 128
+text = "YOU DIED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Restart" type="LinkButton" parent="." unique_id=2129543203]
+offset_left = 305.0
+offset_top = 451.0
+offset_right = 499.0
+offset_bottom = 539.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_x2vho")
+theme_override_font_sizes/font_size = 64
+text = "RESTART"
+underline = 2
+
+[node name="MainMenu" type="LinkButton" parent="." unique_id=289419889]
+offset_left = 647.0
+offset_top = 453.0
+offset_right = 891.0
+offset_bottom = 541.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.98039216, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_x2vho")
+theme_override_font_sizes/font_size = 64
+text = "MAIN MENU"
+underline = 2
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]

@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://dulj1v1ou7mib" load_steps=3]
+[gd_scene format=3 uid="uid://dulj1v1ou7mib"]
 
-[ext_resource type="Texture2D" path="res://assets/Keanu.png" id="1"]
-[ext_resource type="Script" path="res://scripts/win_screen.gd" id="2_script"]
+[ext_resource type="Texture2D" uid="uid://d0xi3jghkp5hk" path="res://assets/Keanu.png" id="1"]
+[ext_resource type="Script" uid="uid://b6hgjg8a5k7ov" path="res://scripts/win_screen.gd" id="2_script"]
 
-[node name="WinScreen" type="TextureRect"]
+[node name="WinScreen" type="TextureRect" unique_id=1581729588]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

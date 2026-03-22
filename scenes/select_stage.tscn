@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://bm653ty7q1qw7"]
+
+[ext_resource type="Texture2D" uid="uid://b4n0an5ukj3aj" path="res://assets/kenney_platformerpack/PNG/Backgrounds/colored_desert.png" id="1_5r7hs"]
+[ext_resource type="FontFile" uid="uid://c8eepg1ubf60l" path="res://fonts/Font-Pack-ec116ca3030490b085a85cd07969ed5a7fb2f3f2/addons/Font Pack/MachineBT.ttf" id="1_t0lex"]
+[ext_resource type="FontFile" uid="uid://boda3j0ml1vlm" path="res://fonts/Font-Pack-ec116ca3030490b085a85cd07969ed5a7fb2f3f2/addons/Font Pack/RodchenkoBTT.ttf" id="3_ce0pn"]
+[ext_resource type="Script" uid="uid://j1dcrc1x30ma" path="res://scripts/back.gd" id="3_ljv77"]
+[ext_resource type="Script" uid="uid://dc1yxquxhuxxr" path="res://scripts/level_1.gd" id="4_8cldu"]
+[ext_resource type="PackedScene" uid="uid://yqmk0vpvnyxr" path="res://scenes/Level1.tscn" id="5_ljv77"]
+[ext_resource type="Script" uid="uid://c0hhd3al8aeax" path="res://scripts/level_2.gd" id="6_ce0pn"]
+[ext_resource type="PackedScene" uid="uid://burik8qkhl88w" path="res://scenes/Level2.tscn" id="7_8cldu"]
+
+[node name="SelectStage" type="Control" unique_id=359763293]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1755052357]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5r7hs")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1407358916]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2141886236]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="Back" type="LinkButton" parent="MarginContainer/VBoxContainer" unique_id=1934021622]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_ce0pn")
+theme_override_font_sizes/font_size = 48
+text = "BACK"
+underline = 2
+script = ExtResource("3_ljv77")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1269213692]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=68735755]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_t0lex")
+theme_override_font_sizes/font_size = 60
+text = "SELECT LEVEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Feedback" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1188083328]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.25490198, 0.07058824, 1)
+theme_override_fonts/font = ExtResource("1_t0lex")
+theme_override_font_sizes/font_size = 48
+text = " "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1054872950]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 64
+
+[node name="Level1" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1779235047]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ce0pn")
+theme_override_font_sizes/font_size = 54
+text = "Level 1"
+script = ExtResource("4_8cldu")
+level1_scene = ExtResource("5_ljv77")
+
+[node name="Level2" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1594060677]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ce0pn")
+theme_override_font_sizes/font_size = 54
+text = "Level 2"
+script = ExtResource("6_ce0pn")
+level2_scene = ExtResource("7_8cldu")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="MarginContainer/VBoxContainer/Back" method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Level1" to="MarginContainer/VBoxContainer/HBoxContainer/Level1" method="_on_level1_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Level2" to="MarginContainer/VBoxContainer/HBoxContainer/Level2" method="_on_level2_pressed"]

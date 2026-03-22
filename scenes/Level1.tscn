@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://pntfqllue4re" path="res://scripts/level1.gd" id="1_level1"]
 [ext_resource type="Texture2D" uid="uid://ch5ret1dd7qk3" path="res://assets/kenney_platformerpack/PNG/Backgrounds/blue_grass.png" id="1_n34uq"]
 [ext_resource type="Texture2D" uid="uid://bnqlpokqm43i6" path="res://assets/kenney_platformerpack/PNG/Ground/Grass/grassCliffAlt_left.png" id="2_n34uq"]
+[ext_resource type="PackedScene" uid="uid://dut4xpdq0show" path="res://scenes/lives.tscn" id="3_ipmer"]
 [ext_resource type="Texture2D" uid="uid://bit47e7bo0psx" path="res://assets/kenney_platformerpack/PNG/Ground/Grass/grassCliffAlt_right.png" id="3_kbo48"]
 [ext_resource type="Texture2D" uid="uid://o2hqxexhdatg" path="res://assets/kenney_platformerpack/PNG/Ground/Grass/grassCliff_left.png" id="4_4dyl1"]
 [ext_resource type="Texture2D" uid="uid://hfmkuab4sc7d" path="res://assets/kenney_platformerpack/PNG/Ground/Grass/grassCliff_right.png" id="5_jxjwb"]
@@ -13,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bgg34m33drh4n" path="res://scenes/win.tscn" id="10_jxjwb"]
 [ext_resource type="PackedScene" uid="uid://b5c2jt7jsixma" path="res://scenes/collectible.tscn" id="11_jxjwb"]
 [ext_resource type="Script" uid="uid://w3lqpb2h0p0b" path="res://scripts/fish_spawner.gd" id="12_spawner"]
-[ext_resource type="PackedScene" path="res://scenes/FishEnemy.tscn" id="13_fish"]
+[ext_resource type="PackedScene" uid="uid://bs8j2ssissgcv" path="res://scenes/FishEnemy.tscn" id="13_fish"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ipmer"]
 texture = ExtResource("1_ecr63")
@@ -559,6 +560,9 @@ theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 32
 text = "level 1
 collect godot.png first to win."
+
+[node name="Lives" parent="HUD" unique_id=781046986 instance=ExtResource("3_ipmer")]
+offset_left = -114.0
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=366487966]
 position = Vector2(445, 209)

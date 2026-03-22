@@ -1,19 +1,19 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene format=3 uid="uid://dvlmxumixl2v6"]
 
-[ext_resource type="Texture2D" path="res://assets/kenney_platformerpack/PNG/Enemies/bee.png" id="1_4pptp"]
-[ext_resource type="Script" path="res://scripts/fly_enemy.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://cmlt5c4ma3gsq" path="res://assets/kenney_platformerpack/PNG/Enemies/bee.png" id="1_4pptp"]
+[ext_resource type="Script" uid="uid://ckll26e62dqh0" path="res://scripts/fly_enemy.gd" id="1_script"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bpf8o"]
 radius = 32.0
 
-[node name="FlyEnemy" type="Area2D"]
+[node name="FlyEnemy" type="Area2D" unique_id=1946056382]
 script = ExtResource("1_script")
 
-[node name="Bee" type="Sprite2D" parent="."]
+[node name="Bee" type="Sprite2D" parent="." unique_id=611627766]
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_4pptp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2141565981]
 position = Vector2(-3, 12)
 scale = Vector2(0.6, 0.6)
 shape = SubResource("CircleShape2D_bpf8o")

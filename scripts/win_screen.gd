@@ -5,4 +5,4 @@ func _ready():
 	if Global.next_scene != "":
 		get_tree().change_scene_to_file(Global.next_scene)
 	else:
-		get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

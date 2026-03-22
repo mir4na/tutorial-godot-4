@@ -7,6 +7,10 @@ func _ready():
 
 func _on_abyss_body_entered(body):
 	if body.name == "Player":
+		Global.lives -= 1
+		if Global.lives == 0:
+			get_tree().change_scene_to_file("res://scenes/LoseScreen.tscn")
+			return
 		var camera = body.get_node("Camera2D")
 		var cam_pos = camera.global_position
 		camera.top_level = true
@@ -40,7 +44,11 @@ func _on_win_body_entered(body):
 			Global.next_scene = "res://scenes/MainMenu.tscn"
 			get_tree().change_scene_to_file("res://scenes/WinScreen.tscn")
 		else:
-			get_tree().change_scene_to_file("res://scenes/LoseScreen.tscn")
+			Global.lives -= 1
+			if Global.lives == 0:
+				get_tree().change_scene_to_file("res://scenes/LoseScreen.tscn")
+			else:
+				get_tree().change_scene_to_file("res://scenes/Level2.tscn")
 
 func _on_activate_platform_body_entered(body):
 	if body.name == "Player":

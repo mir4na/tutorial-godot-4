@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dut4xpdq0show"]
+
+[ext_resource type="Script" uid="uid://c7qeng8fqer7x" path="res://scripts/label.gd" id="1_3syyo"]
+[ext_resource type="FontFile" uid="uid://boda3j0ml1vlm" path="res://fonts/Font-Pack-ec116ca3030490b085a85cd07969ed5a7fb2f3f2/addons/Font Pack/RodchenkoBTT.ttf" id="1_naohr"]
+
+[node name="Lives" type="MarginContainer" unique_id=781046986]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -84.0
+offset_bottom = 57.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+theme_override_constants/margin_right = 30
+
+[node name="Label" type="Label" parent="." unique_id=698535118]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 20
+theme_override_fonts/font = ExtResource("1_naohr")
+theme_override_font_sizes/font_size = 48
+text = "test"
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("1_3syyo")
