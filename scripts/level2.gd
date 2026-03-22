@@ -20,18 +20,6 @@ func _on_abyss_body_entered(body):
 		await get_tree().create_timer(2.0).timeout
 		
 		get_tree().change_scene_to_file("res://scenes/Level2.tscn")
-		
-		#body.set_physics_process(false)
-		#body.hide()
-		#body.velocity = Vector2.ZERO
-		#
-		#body.global_position = $Spawn.global_position
-		#camera.top_level = false
-		#camera.position = Vector2.ZERO
-		#
-		#body.show()
-		#body.set_physics_process(true)
-		#$HUD/Label.visible = true
 
 func _on_collectible_body_entered(body):
 	if body.name == "Player":
@@ -41,8 +29,8 @@ func _on_collectible_body_entered(body):
 func _on_win_body_entered(body):
 	if body.name == "Player":
 		if has_collectible:
-			Global.next_scene = "res://scenes/MainMenu.tscn"
-			get_tree().change_scene_to_file("res://scenes/WinScreen.tscn")
+			Global.next_scene = "res://scenes/main_menu.tscn"
+			get_node("/root/TransitionManager").transition_to("res://scenes/WinScreen.tscn")
 		else:
 			Global.lives -= 1
 			if Global.lives == 0:
