@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
+const ACCELERATION = 400.0
+const DECELERATION = 400.0
 const JUMP_VELOCITY = -400.0
+@export var speed: float = 300.0
 
 func _ready() -> void:
 	floor_snap_length = 10.0
@@ -21,14 +23,14 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	var direction := Input.get_axis("left", "right")
-	if direction != 0:
-		velocity.x = direction * SPEED
-		if direction < 0:
-			$Sprite2D.flip_h = true
-		elif direction > 0:
-			$Sprite2D.flip_h = false
+	if direction > 0:
+		$Sprite2D.flip_h = false
+		velocity.x = lerp(velocity.x, speed, ACCELERATION / speed)
+	elif direction < 0:
+		$Sprite2D.flip_h = true
+		velocity.x = lerp(velocity.x, -speed, ACCELERATION / speed)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = lerp(velocity.x, 0.0, DECELERATION / speed)
 
 	if not is_on_floor():
 		$Animator.play("Jump")
