@@ -3,7 +3,8 @@ extends CharacterBody2D
 const ACCELERATION = 400.0
 const DECELERATION = 400.0
 const JUMP_VELOCITY = -400.0
-@export var speed: float = 300.0
+@export var speed: float = 400.0
+@onready var particle = $GPUParticles2D
 
 func _ready() -> void:
 	floor_snap_length = 10.0
@@ -32,6 +33,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = lerp(velocity.x, 0.0, DECELERATION / speed)
 
+	set_particles()
+
 	if not is_on_floor():
 		$Animator.play("Jump")
 	elif direction != 0:
@@ -40,3 +43,9 @@ func _physics_process(delta: float) -> void:
 		$Animator.play("Idle")
 
 	move_and_slide()
+
+func set_particles():
+	if abs(velocity.x) == speed and is_on_floor():
+		particle.set_emitting(true)
+	else:
+		particle.set_emitting(false)
